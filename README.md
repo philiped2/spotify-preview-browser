@@ -1,4 +1,4 @@
-# Spotify Preview browser
+# Spotify Preview Browser
 
 ## Description
 
