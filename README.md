@@ -1,5 +1,5 @@
-# Spotify Preview Browser
+# Spotify Tracks Browser
 
 ## Description
 
-This app lets you browse the Spotify catalog and listen to previews of songs.
+This app lets you browse the Spotify track-catalog.
