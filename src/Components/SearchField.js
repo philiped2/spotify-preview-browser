@@ -28,8 +28,8 @@ class SearchField extends Component {
  
   render() {
     return (
-      <div style={{ flexDirection: 'column' , maxWidth: 700 }}>
-        <div style={{ flex: 1, alignSelf: 'flex-end'}}>
+      <div style={{ flexDirection: 'column', display: 'flex' }}>
+        <div style={{ flex: 1, alignSelf: 'center', width: '100%', maxWidth: 700 }}>
           <input
             type="search"
             placeholder="Search music"
