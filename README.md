@@ -1,4 +1,4 @@
-# Spotify Tracks Browser
+# Spotify Track Browser
 
 ## Description
 
