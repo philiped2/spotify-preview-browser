@@ -1,5 +1,117 @@
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #121314;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+#root {
+  height: 100%;
+}
+
+.box
+{
+    color: #8F9094;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0px 1px 2px #000000;
+    background-color: #1C1C1F;
+}
+
+.avatarpic
+{
+    width: 30%;
+    height: 30%;
+}
+
+.btn
+{
+    border-radius: 0 !important;
+    background-color: #2EBD59;
+    border-color: #1ABD53;
+}
+
+.btn:focus
+{
+    border-radius: 0 !important;
+    background-color: #2EBD59;
+    border-color: #1ABD53;
+    outline: none !important;
+}
+
+.btn:hover
+{
+    background-color: #1ED760;
+    border-color: #1ED760;
+}
+
+.btn:active
+{
+    background-color: #32c95f !important;
+    border-color: #32c95f !important;
+    outline: none !important;
+}
+
+.customSearchbar
+{
+    border-color: #1ABD53;
+}
+
+.customSearchbar:focus
+{
+    border-color: #1ED760 !important;
+}
+
+.searchNoRounded
+{
+    border-radius: 0 !important;
+}
+
+.hoverRow:hover
+{
+    background-color: #2c2c30;
+}
+
+.resultContainer
+{
+    padding-top: 5px;
+}
+
+.albumArtContainer
+{
+    position: fixed;
+    opacity: 1;
+    Bottom: 0px;
+    height: 200px;
+    color: #8F9094;
+}
+
+.albumArtContainer img
+{
+    max-width:100%;
+    max-height:100%;
+    box-shadow: 5px -5px 10px #121214;
+}
+
+
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    border-top-color: #252525;
+}
+
+th
+{
+    border-bottom-color: #3E3E3E !important;
+}
+
+.albumPopup img
+{
+    opacity: 1 !important;
 }

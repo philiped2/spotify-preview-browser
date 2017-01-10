@@ -7,7 +7,10 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-motion-ui-pack": "^0.10.2",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
