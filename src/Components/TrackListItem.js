@@ -8,7 +8,7 @@ const styles = {
   },
   prop: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 15,
   },
 }
 
