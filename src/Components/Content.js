@@ -48,9 +48,11 @@ class Content extends Component {
   render() {
     return (
       <div style={styles.wrapper}> 
-        <div style={{ flex: 1, width: '100%' }}>
+        <div style={{ flex: 1, width: '100%', maxWidth: 700 }}>
           <SearchField onChange={searchValue => this.handleSearchChange(searchValue)}/>
-          <Results tracks={this.state.tracks} />
+          <div style={{ marginTop: 15 }}>
+            <Results tracks={this.state.tracks} />
+          </div>
         </div>
       </div>
      );
