@@ -45,6 +45,7 @@ class Content extends Component {
 
   handleTrackClick(selectedTrack) {
     this.setState({ selectedTrack: {} }, () => {
+      console.log('Selected track', selectedTrack);
       this.setState({ selectedTrack });
     });
   }
@@ -134,7 +135,7 @@ class Content extends Component {
             }}
           >
             {this.state.selectedTrack.hasOwnProperty('name') &&
-              <div key="mobileFullNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: '100%', backgroundColor: '#1d1d1e', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
+              <div key="mobileFullNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: '100%', background: 'linear-gradient(to top, #0a0a0a, #494949)', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <TrackController mobile track={this.state.selectedTrack} playingSample={this.state.playingSample} playingSampleUrl={this.state.playingSampleUrl} onPlaySample={() => this.handlePlaySample()} onClose={() => this.handleAlbumCoverCloseButtonClick()} />
               </div>
             }
