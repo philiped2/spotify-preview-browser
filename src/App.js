@@ -11,11 +11,6 @@ const styles = {
     height: '100%',
     alignItems: 'center',
   },
-
-  header: {
-    textAlign: 'center',
-    color: '#2EBD59',
-  }
 }
 
 class App extends Component {
@@ -23,7 +18,7 @@ class App extends Component {
     return (
       <div style={styles.wrapper}>
           <div style={{ flex: 1, width: '100%' }}>
-            <Header style={styles.header}/>
+            <Header/>
             <Content />
           </div>
       </div>

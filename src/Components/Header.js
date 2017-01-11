@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Header = props => (
-  <div style={props.style}>
-    <h1>Spotify Track Browser</h1>
+  <div style={{textAlign: 'center', backgroundColor: '#212121', padding: '10px 0px', marginBottom: 15, fontWeight: 'bold' }}>
+    Spotify Track Browser
   </div>
 );
 
