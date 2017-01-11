@@ -24,6 +24,10 @@ body {
     background-color: #1C1C1F;
 }
 
+::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+}
+
 .avatarpic
 {
     width: 30%;

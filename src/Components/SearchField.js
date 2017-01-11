@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 let timer = '';
+
+const SearchInput = styled.input`
+  height: 35px;
+  width: 100%;
+  text-align: center;
+  border: none;
+  borderRadius: 4px;
+  &:focus, &:focus{
+    outline: none;
+  }
+  background-color: #4f4f4f;
+  color: #ffffff;
+`;
 
 class SearchField extends Component {
   constructor(props) {
@@ -10,14 +24,6 @@ class SearchField extends Component {
     };
     this.handleSearchValueChange = this.handleSearchValueChange.bind(this);
   } 
-  
-  getTextFieldStyle() {
-    return {
-      height: 40,
-      width: '100%',
-      textAlign: 'center',
-    }
-  }
 
   fetchSearchResults(searchValue) {
     this.setState({ searchValue }, () => {
@@ -37,12 +43,11 @@ class SearchField extends Component {
  
   render() {
     return (
-      <div style={{ flexDirection: 'column', display: 'flex' }}>
-        <div style={{ flex: 1, alignSelf: 'center', width: '100%', maxWidth: 700 }}>
-          <input
+      <div style={{ flexDirection: 'column', display: 'flex', padding: '0px 10px' }}>
+        <div style={{ flex: 1, alignSelf: 'center', width: '100%', maxWidth: 700, }}>
+          <SearchInput
             type="search"
             placeholder="Search music"
-            style={this.getTextFieldStyle()}
             onChange={this.handleSearchValueChange}
           />
         </div>
