@@ -12,14 +12,6 @@ const requestOptions = {
   json: true
 }
 
-const styles = {
-
-  wrapper: {
-    height: '100%',
-  },
-
-}
-
 
 class Content extends Component {
   constructor(props) {
@@ -89,7 +81,7 @@ class Content extends Component {
 
   render() {
     return (
-      <div style={styles.wrapper}> 
+      <div> 
         {this.state.trackSampleUrl &&
           <audio autoPlay style={{ display: 'none' }}>
             <source src={this.state.trackSampleUrl} type="audio/ogg" />
