@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+let timer = '';
+
 class SearchField extends Component {
   constructor(props) {
     super(props);
@@ -16,13 +18,21 @@ class SearchField extends Component {
       textAlign: 'center',
     }
   }
-  
-  handleSearchValueChange(event) {
-    const searchValue = event.target.value;
+
+  fetchSearchResults(searchValue) {
     this.setState({ searchValue }, () => {
       console.log('Updated search value: ', this.state.searchValue);
       this.props.onChange(this.state.searchValue);
     });
+  }
+  
+  handleSearchValueChange(event) {
+    clearTimeout(timer);
+    const searchValue = event.target.value;
+    timer = setTimeout(() => {
+      console.log(searchValue);
+      this.fetchSearchResults(searchValue);
+    }, 500);
   }
  
   render() {
