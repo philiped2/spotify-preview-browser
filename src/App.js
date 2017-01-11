@@ -10,11 +10,9 @@ const styles = {
     flexDirection: 'column',
     height: '100%',
     alignItems: 'center',
-    margin: '0px 15px',
   },
 
   header: {
-    height: 100,
     textAlign: 'center',
     color: '#2EBD59',
   }
