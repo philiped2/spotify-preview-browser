@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import rp from 'request-promise';
 import MediaQuery from 'react-responsive';
-import { spring } from 'react-motion';
 import Transition from 'react-motion-ui-pack';
 import Results from './Results';
 import SearchField from './SearchField.js';
@@ -125,7 +124,7 @@ class Content extends Component {
           >
             {this.state.selectedTrack.hasOwnProperty('name') &&
               <div key="desktopSideNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: 300, backgroundColor: '#1d1d1e', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
-                <div onMouseEnter={() => this.handleHoverAlbumCover(true)} onMouseLeave={() => this.handleHoverAlbumCover(false)}><img style={{ width: '100%' }} src={this.state.selectedTrack.album.images[1].url}></img></div>
+                <div onMouseEnter={() => this.handleHoverAlbumCover(true)} onMouseLeave={() => this.handleHoverAlbumCover(false)}><img alt="close-button" style={{ width: '100%' }} src={this.state.selectedTrack.album.images[1].url}></img></div>
                 <Transition
                   component={false}
                   enter={{
@@ -166,7 +165,7 @@ class Content extends Component {
             {this.state.selectedTrack.hasOwnProperty('name') &&
               <div key="mobileSideNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: '100%', backgroundColor: '#1d1d1e', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
                 <div style={{ position: 'absolute', right: 5 }}><CloseButton onClick={() => this.handleAlbumCoverCloseButtonClick()} /></div>
-                <div><img style={{ width: '100%' }} src={this.state.selectedTrack.album.images[1].url}></img></div>
+                <div><img alt="close-button" style={{ width: '100%' }} src={this.state.selectedTrack.album.images[1].url}></img></div>
                 <div style={{ marginTop: 5, padding: '0px 5px' }}>{this.state.selectedTrack.name}</div>
                 <div style={{ marginTop: 5, fontSize: 15, padding: '0px 5px' }}>{this.state.selectedTrack.album.artists.map(artist => artist.name)}</div>
                 <div style={{ marginTop: 5, fontSize: 13, padding: '0px 5px' }}>{this.state.selectedTrack.album.name}</div>

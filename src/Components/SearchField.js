@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Content from './Content';
 
 class SearchField extends Component {
   constructor(props) {

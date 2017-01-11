@@ -3,9 +3,6 @@ import Transition from 'react-motion-ui-pack';
 import TrackListItem from './TrackListItem';
 
 class TrackList extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
