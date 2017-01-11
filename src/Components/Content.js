@@ -102,7 +102,7 @@ class Content extends Component {
           </div>
         </div>
 
-        <MediaQuery query='(min-device-width: 1224px)'>
+        <MediaQuery query='(min-device-width: 480px)'>
           <Transition
             component={false}
             enter={{
@@ -142,7 +142,7 @@ class Content extends Component {
           </Transition>
         </MediaQuery>
 
-        <MediaQuery query='(max-device-width: 1224px)'>
+        <MediaQuery query='(max-device-width: 480px)'>
           <Transition
             component={false}
             enter={{
