@@ -35,7 +35,6 @@ class SearchField extends Component {
             placeholder="Search music"
             style={this.getTextFieldStyle()}
             onChange={this.handleSearchValueChange}
-            className="customSearchbar"
           />
         </div>
       </div>

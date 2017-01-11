@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const Header = props => (
   <div style={props.style}>
     <h1>Spotify Track Browser</h1>

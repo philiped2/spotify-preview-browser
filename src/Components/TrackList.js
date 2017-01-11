@@ -10,7 +10,7 @@ class TrackList extends Component {
     return (
       <div>
         {this.props.tracks.length > 0 &&
-          <div style={{ display: 'flex', flexDirection: 'row', fontSize: 20 }}>
+          <div style={{ display: 'flex', flexDirection: 'row', fontSize: 20, color: 'rgba(255, 255, 255, 0.8)', marginBottom: 10, padding: '0px 10px' }}>
             <div style={{ flex: 1 }}>
               Track
             </div>
@@ -22,22 +22,28 @@ class TrackList extends Component {
             </div>
           </div>
         }
+
+        <Transition
+          component="div"
+          enter={{
+            opacity: 1,
+          }}
+          leave={{
+            opacity: 0,
+          }}
+        >
+          {this.props.tracks.map(track => (
+            <div onClick={() => this.props.onTrackClick(track)} key={track.id}>
+              <hr style={{ borderColor: 'rgba(255, 255, 255, 0.1)', margin: 0, padding: 0 }}/>
+              <TrackListItem
+                track={track}
+                onPlay={() => this.props.onPlay()}
+                playingStatus={this.props.playingStatus}
+              />
+            </div>
+          ))}
+        </Transition>
         
-        {this.props.tracks.map(track => (
-          <Transition
-            component="div"
-            enter={{
-              opacity: 1,
-            }}
-            leave={{
-              opacity: 0,
-            }}
-            style={{ margin: '10px 0px'}}
-          >
-            <hr style={{ borderColor: 'rgba(255, 255, 255, 0.7)' }}/>
-            <TrackListItem track={track} style={{ margin: '5px 0px'}} />
-          </Transition>
-        ))}
       </div>
      );
   }
