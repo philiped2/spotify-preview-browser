@@ -17,9 +17,11 @@ class App extends Component {
   render() {
     return (
       <div style={styles.wrapper}>
-          <div style={{ flex: 1, width: '100%' }}>
+          <div style={{ flex: 1, width: '100%', display: 'flex', flexDirection: 'column' }}>
             <Header/>
-            <Content />
+            <div style={{ flex: 1, overflow: 'hidden' }}>
+              <Content />
+            </div>
           </div>
       </div>
     );
