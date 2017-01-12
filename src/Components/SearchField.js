@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
+
+const ga = ReactGA.initialize('UA-67282727-2');
 
 let timer = '';
 
@@ -31,17 +34,28 @@ class SearchField extends Component {
       this.props.onChange(this.state.searchValue);
     });
   }
+
+  logSearch(searchValue) {
+    ReactGA.event({
+      category: 'General',
+      action: 'Searched',
+      label: searchValue,
+    });
+    console.log('Logged search');
+  }
   
   handleSearchValueChange(event) {
     clearTimeout(timer);
     const searchValue = event.target.value;
     timer = setTimeout(() => {
       console.log(searchValue);
+      this.logSearch(searchValue);
       this.fetchSearchResults(searchValue);
     }, 500);
   }
  
   render() {
+    console.log(ReactGA);
     return (
       <div style={{ flexDirection: 'column', display: 'flex', padding: '0px 10px' }}>
         <div style={{ flex: 1, alignSelf: 'center', width: '100%', maxWidth: 700, }}>
