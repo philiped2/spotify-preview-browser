@@ -55,7 +55,6 @@ class SearchField extends Component {
   }
  
   render() {
-    console.log(ReactGA);
     return (
       <div style={{ flexDirection: 'column', display: 'flex', padding: '0px 10px' }}>
         <div style={{ flex: 1, alignSelf: 'center', width: '100%', maxWidth: 700, }}>
