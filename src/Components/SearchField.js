@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
-const ga = ReactGA.initialize('UA-67282727-2');
-
 let timer = '';
 
 const SearchInput = styled.input`
