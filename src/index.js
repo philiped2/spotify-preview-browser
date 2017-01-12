@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 
 const ga = ReactGA.initialize('UA-67282727-2');
+ReactGA.pageview(window.location.pathname);
 
 ReactDOM.render(
   <App />,
