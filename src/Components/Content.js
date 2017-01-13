@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import rp from 'request-promise';
 import MediaQuery from 'react-responsive';
 import Transition from 'react-motion-ui-pack';
+import ReactHowler from 'react-howler'
 import Results from './Results';
 import SearchField from './SearchField.js';
 import TrackController from './TrackController';
@@ -17,10 +18,11 @@ class Content extends Component {
       loading: false,
       selectedTrack: {},
       tracks: [],
-      playingSampleUrl: '',
+      sampleUrl: '',
       playingSample: false,
       showAlbumCloseButton: false,
     };
+    
   }
   
   handleSearchChange(searchValue) {
@@ -44,24 +46,27 @@ class Content extends Component {
   }
 
   handleTrackClick(selectedTrack) {
-    this.setState({ selectedTrack: {} }, () => {
-      console.log('Selected track', selectedTrack);
-      this.setState({ selectedTrack });
-    });
+    // this.setState({ selectedTrack: {} }, () => {
+    //   console.log('Selected track', selectedTrack);
+    //   this.setState({ selectedTrack });
+    // });
+
+    this.setState({ selectedTrack });
   }
 
   handlePlaySample() {
     let sampleUrl = this.state.selectedTrack.preview_url;
     let playStatus = true;
 
-    if (this.state.playingSampleUrl === this.state.selectedTrack.preview_url && this.state.playingSample) {
-      sampleUrl = '';
+    if (this.state.sampleUrl === this.state.selectedTrack.preview_url && this.state.playingSample) {
       playStatus = false;
     }
 
-    this.setState({ playingSampleUrl: '' }, () => {
-      this.setState({ playingSampleUrl: sampleUrl, playingSample: playStatus });
-    });
+    this.setState({ sampleUrl: sampleUrl, playingSample: playStatus });
+  }
+
+  handleStopSample() {
+    this.setState({ playingSample: false });
   }
 
   handleHoverAlbumCover(hovering) {
@@ -78,13 +83,26 @@ class Content extends Component {
   }
 
   render() {
+    
     return (
-      <div> 
-        {this.state.playingSampleUrl &&
+      <div>
+        {/*this.state.sampleUrl &&
           <audio autoPlay style={{ display: 'none' }}>
-            <source src={this.state.playingSampleUrl} type="audio/ogg" />
+            <source src={this.state.sampleUrl} type="audio/ogg" />
           </audio>
+        */}
+
+        {this.state.playingSample &&
+          <ReactHowler
+            src={this.state.sampleUrl}
+            playing={this.state.playingSample}
+            format={['mp3']}
+            onEnd={() => this.handleStopSample()}
+          />
         }
+
+        
+
         <div style={{display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center' }}>
           <div style={{ width: '100%', padding: '10px 0px', backgroundColor: '#282828' }}>
             <SearchField onChange={searchValue => this.handleSearchChange(searchValue)}/>
@@ -96,7 +114,7 @@ class Content extends Component {
                 loading={this.state.loading}
                 onTrackClick={track => this.handleTrackClick(track)}
                 onPlay={() => this.handlePlaySample()}
-                playingStatus={{ playing: this.state.playingSample, sampleUrl: this.state.playingSampleUrl }}
+                playingStatus={{ playing: this.state.playingSample, sampleUrl: this.state.sampleUrl }}
               />
             </div>
           </div>
@@ -116,7 +134,7 @@ class Content extends Component {
           >
             {this.state.selectedTrack.hasOwnProperty('name') &&
               <div key="desktopSideNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: 300, backgroundColor: '#1d1d1e', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
-                <TrackController track={this.state.selectedTrack} playingSample={this.state.playingSample} playingSampleUrl={this.state.playingSampleUrl} onPlaySample={() => this.handlePlaySample()} onClose={() => this.handleAlbumCoverCloseButtonClick()} />
+                <TrackController track={this.state.selectedTrack} playingSample={this.state.playingSample} sampleUrl={this.state.sampleUrl} onPlaySample={() => this.handlePlaySample()} onClose={() => this.handleAlbumCoverCloseButtonClick()} />
               </div>
             }
           </Transition>
@@ -136,7 +154,7 @@ class Content extends Component {
           >
             {this.state.selectedTrack.hasOwnProperty('name') &&
               <div key="mobileFullNav" style={{ position: 'fixed', height: '100%', zIndex: 2, top: 0, width: '100%', background: 'linear-gradient(to top, #0a0a0a, #494949)', display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
-                <TrackController mobile track={this.state.selectedTrack} playingSample={this.state.playingSample} playingSampleUrl={this.state.playingSampleUrl} onPlaySample={() => this.handlePlaySample()} onClose={() => this.handleAlbumCoverCloseButtonClick()} />
+                <TrackController mobile track={this.state.selectedTrack} playingSample={this.state.playingSample} sampleUrl={this.state.sampleUrl} onPlaySample={() => this.handlePlaySample()} onClose={() => this.handleAlbumCoverCloseButtonClick()} />
               </div>
             }
           </Transition>

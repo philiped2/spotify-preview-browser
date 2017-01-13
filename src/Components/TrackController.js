@@ -46,7 +46,7 @@ class TrackController extends Component {
         <div style={{ marginTop: 5, fontSize: 15, padding: '0px 5px' }}>{track.album.artists.map(artist => artist.name)}</div>
         <div style={{ marginTop: 5, fontSize: 13, padding: '0px 5px' }}>{track.album.name}</div>
         <div style={{ marginTop: 15 }}>
-          <PlayButton onClick={() => this.props.onPlaySample()} playing={this.props.playingSample && this.props.playingSampleUrl === track.preview_url}/>
+          <PlayButton onClick={() => this.props.onPlaySample()} playing={this.props.playingSample && this.props.sampleUrl === track.preview_url}/>
         </div>
       </div>
   )};
