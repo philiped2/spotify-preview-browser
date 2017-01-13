@@ -7,8 +7,8 @@ class TrackList extends Component {
     return (
       <div>
         {this.props.tracks.length > 0 &&
-          <div style={{ display: 'flex', flexDirection: 'row', fontSize: 20, color: 'rgba(255, 255, 255, 0.8)', marginBottom: 10, padding: '0px 10px' }}>
-            <div style={{ flex: 1 }}>
+          <div style={{ display: 'flex', flexDirection: 'row', fontSize: 20, color: 'rgba(255, 255, 255, 0.8)', marginBottom: 10 }}>
+            <div style={{ flex: 1, padding: '0px 10px' }}>
               Track
             </div>
             <div style={{ flex: 1 }}>
