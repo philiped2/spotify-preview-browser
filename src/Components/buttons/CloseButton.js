@@ -16,7 +16,10 @@ const StyledIcon = styled.i`
   user-select: none;
   &:hover { 
     cursor: pointer;
-    cursor: hand; 
+    cursor: hand;
+  }
+  &:active { 
+    color: rgba(255,255,255,0.7);
   }
 `;
 

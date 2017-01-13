@@ -18,6 +18,9 @@ const StyledIcon = styled.i`
     cursor: pointer;
     cursor: hand; 
   }
+  &:active { 
+    color: rgba(255,255,255,0.7);
+  }
 `;
 
 export default PlayButton;
